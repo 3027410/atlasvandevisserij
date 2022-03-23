@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+	
+	<link href="../../css/style.css" rel="stylesheet" type="text/css">
+	
+	
+	
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	
+	<style>
+	body{
+	background-color: #323d4d;
+	color: #fff;
+	
+}
+
+
+	text{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	color: #fff !important;
+	z-index:99999;
+}
+
+
+	
+	</style>
+	
+	
+</head>
+<body>
+
+
+<div class="visdiagramstijl">
+<h1>EU fishing fleet capacity, 2019</h1>
+<svg class="visdiagram" width="500" height="500"></svg>
+</div>
+
+
+<script>
+const data = [{
+    name: 'Spain 24.9%',
+    value: 24.9
+}, {
+    name: 'France 12.9%',
+    value: 12.9
+}, {
+    name: 'Italy 11%',
+    value: 11
+}, {
+    name: 'Netherlands 8.6%',
+    value: 8.6
+}, {
+    name: 'Portugal 6.5%',
+    value: 6.5
+}, {
+    name: 'Denmark 5.4%',
+    value: 5.4
+}, {
+    name: 'Greece 5.2%',
+    value: 5.2
+}, {
+    name: 'Others 25.5%',
+    value: 25.5
+}
+
+
+
+
+];
+
+const svg = d3.select('svg'),
+    width = svg.attr('width'),
+    height = svg.attr('height');
+
+const radius = 200;
+const g = svg.append('g').attr('transform', `translate(${width/2}, ${height/2})`);
+
+const color = d3.scaleOrdinal(['#042940', '#005C53', '#9FC131', '#DBF227', '#D6D58E', '#506266','#3CA6A6','#fff']);
+
+const pie = d3.pie().sort(null).value(d => d.value);
+
+const path = d3.arc().outerRadius(radius).innerRadius(90);
+
+const label = d3.arc().outerRadius(radius).innerRadius(radius - 90);
+
+const pies = g.selectAll('.arc').data(pie(data)).enter().append('g').attr('class', 'arc');
+
+pies.append('path').attr('d', path).attr('fill', d => color(d.data.value));
+
+pies.append('text')
+  .attr('transform', function(d) {
+    return `translate(${label.centroid(d)})`;})
+  .text(d => d.data.name)
+  
+
+</script>
+
+
+</body>
+</html>
