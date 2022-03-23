@@ -1305,7 +1305,7 @@ background-repeat: no-repeat;
 background-position-x: center;
 background-position-y: center;
 background-attachment: fixed;
-display: grid;
+display: flex;
 }
 
 
@@ -1453,7 +1453,13 @@ text-align:center;
 }
 
 
-
+.beeldruimte{
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-attachment: fixed;
+    background-position-x: center;
+}
 
 
 .beeldruimte-intro{
@@ -1514,6 +1520,8 @@ vertical-align: middle;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position-y: center;
+    background-attachment: fixed;
+    background-position-x: center;
 }
 
 .beeldruimte h1{
