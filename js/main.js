@@ -8,3 +8,6 @@ function menuBar() {
     x.style.display = "block";
   }
 }
+
+
+// alles voor de Leafletkaart
