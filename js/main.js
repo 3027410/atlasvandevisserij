@@ -1,3 +1,5 @@
+// Voor mobiel menu
+
 function menuBar() {
   var x = document.getElementById("myLinks");
   if (x.style.display === "block") {
