@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+
+					<title>Atlas van de Vissrij - Kaarten voor de Bühne</title>
+					<link rel="icon" href="images/simple-ATLAStfavicon.png" type="image/x-icon" >
+					<link href="css/style.css" rel="stylesheet" type="text/css">
+					<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet"> 
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+					
+					
+					
+					<!-- Maptiler kaart -->
+					<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+					<script src="https://cdn.maptiler.com/maplibre-gl-js/v2.1.1/maplibre-gl.js"></script>
+					<link href="https://cdn.maptiler.com/maplibre-gl-js/v2.1.1/maplibre-gl.css" rel="stylesheet" />
+
+	</head>
+	<body>
+	
+		<div class="buitenbalk">
+		<header> <a href="index.html">
+				<img height="75px" src="images/simple-ATLAStlogowit.png">
+				</a>
+				<nav>
+					<ul>
+						<li><h6><a class="actieflink" href="#">Home</a></h6></li>
+						<li><h6><a href="#Vancouver">Vancouver<i class="fas fa-chevron-right"></i></a></h6></li>
+						<li><h6><a href="#">De twee kaart </a></h6></li>
+						<li><h6><a class="navigatielink" href="#">Contact</a></h6></li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+
+
+
+
+		<!-- Mobiel menu -->
+		<div class="topnav">
+
+			<a class="mobiellink" href="index.html"><img class="logomobiel" height="50px" src="images/simple-ATLAStlogowit.png"></a>
+				<a class="naastelkaar" href="https://twitter.com/waterschappen" target="_blank"><img height="16px" src="images/twitter-logo.png"></a>
+					<a class="naastelkaar" href="https://www.youtube.com/user/uvwvideokanaal" target="_blank"><img height="18px" src="images/yt_logo.png"></a>
+
+					<div id="myLinks">
+						<a href="urban-deltas.html">De delta's</a>
+						<a href="over-project-wereldwateren.html">Over dit project</a>
+						<a href="help-mee.html">Help mee!</a>
+
+
+
+					</div>
+					<a href="javascript:void(0);" class="icon" onclick="menuBar()">
+						<i class="fa fa-bars"></i>
+					</a>
+
+		</div>
+		
+		
+		<!-- Toch besloten de leaflet met Geojson data een iframe te laten, omdat ik deze anders niet werkbaar krijg. -->
+		<div class="blok-ad" id="Vancouver" style="height:1000px;">
+			<iframe id="FRD-leafet" name="FRD-leafet" title="FRD-leafet" class="responsive-iframe" src="graphdata/FRD-leaflet/leaflet_Fraser.html" style="width: 0; min-width: 100% !important; border: none; min-height:100%;" height="100%"></iframe>
+
+		</div>
+		
+		
+		<!-- Ook een iframe, omdat dit de enige manier vanuit Datawrapper is-->
+		<div class="beeldruimte">
+			<iframe id="zalmpassages" name="Totaal aantal zalmpassages zomer 2020" title="Totaal aantal zalmpassages zomer 2020" aria-label="chart" id="datawrapper-chart-p5taq" src="https://datawrapper.dwcdn.net/p5taq/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none; min-height:100%;" height="100%"></iframe>
+			<script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+			</script>
+
+		</div> 
+		
+		
+		
+<div class="blok-ad">	
+	<div id="map"></div>
+		<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>
+		
+		<div id="state-legend" class="legend"> 
+	  <h4>Aanvoer van geselecteerde landen</br>
+	  van vis (x 1000 ton) - 2019</h4>
+
+		<div><span style="background-color: #1996E0"></span>0 - 500</div>
+		<div><span style="background-color: #1479B5"></span>500 - 1.000</div>
+		<div><span style="background-color: #0E5580"></span>1.000 - 1.500</div>
+		<div><span style="background-color: #08334D"></span>1.500 - 2.000</div>
+		</br>
+		  Bron: <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=fish_ld_main&lang=en">Eurostat</a>
+	</div>
+		
+		
+</div> 
+
+
+
+
+
+				
+				
+				<div class="devoetzijnkleur">
+					<div class="binnencontainer">
+						<div class="devoet">
+
+							<div class="eenderdevoet">
+								<h2>Project Wereldwateren</h2>
+								<a href="over-project-wereldwateren.html"><p>Over Project Wereldwateren</p></a>
+								<a href="over-project-wereldwateren.html#contact"><p>Contact</p></a>
+								<a href="help-mee.html"><p style="color: #31bef0 !important;">Help mee!</p></a>
+							</div>
+
+							<div class="eenderdevoet">
+								<h2>Urban Deltas</h2>
+								<a href="urban-deltas.html"><p>Alle Delta's</p></a>
+								<a href="deltas-vergelijken.html"><p>Delta's vergelijken</p></a>
+								<hr>
+									<a href="elbedelta.html"><p>Elbedelta</p></a>
+									<a href="fraser-river-delta.html"><p>Fraser River Delta</p></a>
+							</div>
+
+							<div class="eenderdevoet">
+								<h2>Social</h2>
+								<a href="https://www.youtube.com/user/uvwvideokanaal" target="_blank"><p><img src="images/yt_logo.png" style="vertical-align: bottom;" height="20px"> UVW Youtube</p></a>
+								<hr>
+								<a href="https://www.youtube.com/playlist?list=PLAA8yVxqwatxVg6_9lf-M17zt7ggYyxb4" target="_blank"><p><img src="images/yt_logo-uvw-int.png" style="vertical-align: bottom;" height="20px"> UVW Youtube Int.</p></a>
+								<hr>
+								<a href="https://twitter.com/waterschappen" target="_blank"><p><img src="images/twitter-logo.png" style="vertical-align: bottom;" height="20px"> Twitter</p></a>
+
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+
+
+
+		<!-- Jaartal notatie -->
+		<div class="copyright">&copy;
+			<script type="text/javascript">
+				var today = new Date()
+				var year = today.getFullYear()
+				document.write(year)
+			</script>
+			Deze website is mogelijk gemaakt door de Unie van Waterschappen, i.s.m. Rijkswaterstaat | Gebouwd en ontworpen door Gablo
+		</div>
+		
+		
+		
+		
+		
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
