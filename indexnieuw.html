@@ -13,10 +13,27 @@
 					
 					
 					
-					<!-- Maptiler kaart -->
+					<!-- Maptilerkaart -->
 					<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 					<script src="https://cdn.maptiler.com/maplibre-gl-js/v2.1.1/maplibre-gl.js"></script>
 					<link href="https://cdn.maptiler.com/maplibre-gl-js/v2.1.1/maplibre-gl.css" rel="stylesheet" />
+					
+					
+					<!-- openLayerskaart -->
+					<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/css/ol.css" type="text/css">
+					<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/build/ol.js"></script>
+					<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/build/ol.js"></script>
+					
+					
+					
+					<!-- Mapbox GL JS -->
+					<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+					<link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+					<script src="https://unpkg.com/@esri/arcgis-rest-request@3.0.0/dist/umd/request.umd.js"></script>
+					<script src="https://unpkg.com/@esri/arcgis-rest-routing@3.0.0/dist/umd/routing.umd.js"></script>
+					<script src="https://unpkg.com/@esri/arcgis-rest-auth@3.0.0/dist/umd/auth.umd.js"></script>
+									
+					
 
 	</head>
 	<body>
@@ -60,29 +77,27 @@
 
 		</div>
 		
-		
-		<!-- Toch besloten de leaflet met Geojson data een iframe te laten, omdat ik deze anders niet werkbaar krijg. -->
-		<div class="blok-ad" id="Vancouver" style="height:1000px;">
-			<iframe id="FRD-leafet" name="FRD-leafet" title="FRD-leafet" class="responsive-iframe" src="graphdata/FRD-leaflet/leaflet_Fraser.html" style="width: 0; min-width: 100% !important; border: none; min-height:100%;" height="100%"></iframe>
-
-		</div>
-		
-		
-		<!-- Ook een iframe, omdat dit de enige manier vanuit Datawrapper is-->
-		<div class="beeldruimte">
-			<iframe id="zalmpassages" name="Totaal aantal zalmpassages zomer 2020" title="Totaal aantal zalmpassages zomer 2020" aria-label="chart" id="datawrapper-chart-p5taq" src="https://datawrapper.dwcdn.net/p5taq/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none; min-height:100%;" height="100%"></iframe>
+<div class="grid-container">
+  <div class="grid-item">
+  		<!-- Toch besloten de leaflet met Geojson data een iframe te laten, omdat ik deze anders niet werkbaar krijg. -->
+			<iframe id="FRD-leafet" name="FRD-leafet" title="FRD-leafet" class="responsive-iframe" src="graphdata/FRD-leaflet/leaflet_Fraser.html" style="width: 0; min-width: 100% !important; border: none; min-height:100%;" height="1000px"></iframe>
+  </div>
+  <div class="grid-item">2</div>
+  
+   <div class="grid-item">3</div>
+  <div class="grid-item">
+  	<iframe id="zalmpassages" name="Totaal aantal zalmpassages zomer 2020" title="Totaal aantal zalmpassages zomer 2020" aria-label="chart" id="datawrapper-chart-p5taq" src="https://datawrapper.dwcdn.net/p5taq/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none; min-height:100%;" height="100%"></iframe>
 			<script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
 			</script>
+  
+  </div>  
 
-		</div> 
-		
-		
-		
-<div class="blok-ad">	
-	<div id="map"></div>
-		<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>
-		
-		<div id="state-legend" class="legend"> 
+  <div class="grid-item">
+  	<div id="mapTilerMap"></div>
+  </div>
+  <div class="grid-item">
+  
+    <div id="state-legend" class="legendaMaptiler"> 
 	  <h4>Aanvoer van geselecteerde landen</br>
 	  van vis (x 1000 ton) - 2019</h4>
 
@@ -93,50 +108,41 @@
 		</br>
 		  Bron: <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=fish_ld_main&lang=en">Eurostat</a>
 	</div>
+  </div>  
+  <div class="grid-item">7</div>
+  <div class="grid-item">
+    <div id="openLayersmap" class="openLayersmap"></div>
+
+  
+  </div>
+  
+  
+  <div class="grid-item">
+  <div id="MAPBOX"></div>
+   </div>
+  
+  
+  
+  
+</div>
 		
 		
-</div> 
 
 
 
 
+
+
+
+<style>
+      @import url(../templates/bucket.css);
+    </style>
+    <div id="cesiumContainer" class="fullSize"></div>
+    <div id="loadingOverlay"><h1>Loading...</h1></div>
+    <div id="toolbar"></div>
 
 				
-				
-				<div class="devoetzijnkleur">
-					<div class="binnencontainer">
-						<div class="devoet">
 
-							<div class="eenderdevoet">
-								<h2>Project Wereldwateren</h2>
-								<a href="over-project-wereldwateren.html"><p>Over Project Wereldwateren</p></a>
-								<a href="over-project-wereldwateren.html#contact"><p>Contact</p></a>
-								<a href="help-mee.html"><p style="color: #31bef0 !important;">Help mee!</p></a>
-							</div>
-
-							<div class="eenderdevoet">
-								<h2>Urban Deltas</h2>
-								<a href="urban-deltas.html"><p>Alle Delta's</p></a>
-								<a href="deltas-vergelijken.html"><p>Delta's vergelijken</p></a>
-								<hr>
-									<a href="elbedelta.html"><p>Elbedelta</p></a>
-									<a href="fraser-river-delta.html"><p>Fraser River Delta</p></a>
-							</div>
-
-							<div class="eenderdevoet">
-								<h2>Social</h2>
-								<a href="https://www.youtube.com/user/uvwvideokanaal" target="_blank"><p><img src="images/yt_logo.png" style="vertical-align: bottom;" height="20px"> UVW Youtube</p></a>
-								<hr>
-								<a href="https://www.youtube.com/playlist?list=PLAA8yVxqwatxVg6_9lf-M17zt7ggYyxb4" target="_blank"><p><img src="images/yt_logo-uvw-int.png" style="vertical-align: bottom;" height="20px"> UVW Youtube Int.</p></a>
-								<hr>
-								<a href="https://twitter.com/waterschappen" target="_blank"><p><img src="images/twitter-logo.png" style="vertical-align: bottom;" height="20px"> Twitter</p></a>
-
-							</div>
-
-
-						</div>
-					</div>
-				</div>
 
 
 
@@ -152,8 +158,14 @@
 		
 		
 		
-		
-		
-		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/openLayers.js"></script>
+		<script type="text/javascript" src="js/maptilerMap.js"></script>
+		<script type="text/javascript" src="js/mapboxMap.js"></script>
+
+			<!-- data -->
+	<script src="turf.js"></script>
+	<script src="vvm.js"></script>
+	<script src="mvg.js"></script>
+	<script src="delta.js"></script>
 	</body>
 </html>

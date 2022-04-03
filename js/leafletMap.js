@@ -1,67 +1,4 @@
-<html>
-<head><title>Leaflet.js Essentials</title>
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-	   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-	   crossorigin=""/>
-	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-	   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-	   crossorigin=""></script>
-	<link href="css/style.css" rel="stylesheet" type="text/css">
-	<style>
-	/*Stijl voor de leafletkaart*/
-		#LEAFLET { position: absolute; top:0; bottom:0; right:0; left:0;z-index:0}
-		p {position: absolute; top: 0; right: 0; z-index:1; background-color: white}
-		
-		
-		
-	/*Legenda voor de Leaflet specifiek*/
-.legendaLeaflet {
-  padding: 16px 10px;
-  font: 14px Roboto Slab, Arial, sans-serif;
-  background: white;
-  background: rgba(255, 255, 255, 0.8);
-  /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
-  /*border-radius: 5px;*/
-  line-height: 24px;
-  color: #555;
-}
-.legendaLeaflet h4 {
-  text-align: left;
-  font-size: 16px;
-  margin: 2px 12px 8px;
-  color: #333;
-}
-
-.legendaLeaflet span {
-  position: relative;
-  bottom: 3px;
-}
-
-.legendaLeaflet i {
-  width: 18px;
-  height: 18px;
-  float: left;
-  margin: 0 8px 0 0;
-  opacity: 0.7;
-}
-
-.legendaLeaflet i.icon {
-  background-size: 18px;
-  background-color: rgba(255, 255, 255, 1);
-}
-	</style>
-</head>
-<body>
- 
-	<div id="LEAFLET"></div>
-	<!-- data -->
-	<script src="turf.js"></script>
-	<script src="vvm.js"></script>
-	<script src="mvg.js"></script>
-	<script src="delta.js"></script>
-
-	<script> //map initilizer
-	var map = L.map('LEAFLET', {center: [49.17362371108846, -122.9692840576172],zoom: 11, maxZoom: 12,minZoom: 9});
+var map = L.map('LEAFLET', {center: [49.17362371108846, -122.9692840576172],zoom: 11, maxZoom: 12,minZoom: 9});
 	L.tileLayer('https://api.mapbox.com/styles/v1/3027410/ckiwapns74mw219qowh0oqe8f/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiMzAyNzQxMCIsImEiOiJjazQ5eWpibWowOWxvM2twYnp6aXNkdWdmIn0.uzKMav-HM8sMvEQ0uyvsFQ',)
 
 	.addTo(map);
@@ -140,8 +77,4 @@ legend.addTo(map);
 
 
 
-	</script> 
-
-</body>
-</html>
-
+	

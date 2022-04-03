@@ -3,7 +3,7 @@
 
 
 		var map = new maplibregl.Map({
-		container: 'map',
+		container: 'mapTilerMap',
 		style: 'https://api.maptiler.com/maps/nl-cartiqo-light/style.json?key=rhjrYDAgUpZ6CRvdT2KM',
 		center: [0.11, 51.49],
 		zoom: 3,
