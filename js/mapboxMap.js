@@ -3,7 +3,7 @@
 
       const basemapEnum = "ArcGIS:Navigation";
 
-      const map = new mapboxgl.Map({
+      const mapBoxmap = new mapboxgl.Map({
         container: "MAPBOX", // the id of the div element
         style: `https://basemaps-api.arcgis.com/arcgis/rest/services/styles/${basemapEnum}?type=style&token=${apiKey}`,
         zoom: 7, // starting zoom
@@ -16,36 +16,36 @@
 // Bunschoten-Spakenburg
 const marker1 = new mapboxgl.Marker()
 .setLngLat([5.380002197265643, 52.253662817244404])
-.addTo(map);
+.addTo(mapBoxmap);
 
 
 // IJmuiden
 const marker2 = new mapboxgl.Marker()
 .setLngLat([4.591990646362323, 52.45853340088063])
-.addTo(map);
+.addTo(mapBoxmap);
 
 
 // Volendam
 const marker3 = new mapboxgl.Marker()
 .setLngLat([5.068274, 52.496376])
-.addTo(map);
+.addTo(mapBoxmap);
 
 
 // Urk
 const marker4 = new mapboxgl.Marker()
 .setLngLat([5.597982889206401, 52.661985173891466])
-.addTo(map);
+.addTo(mapBoxmap);
 
 // Den Haag
 const marker5 = new mapboxgl.Marker()
 .setLngLat([4.267509, 52.098287])
-.addTo(map);
+.addTo(mapBoxmap);
 
 
 
       function addServiceAreaLayer() {
 
-        map.addSource("servicearea", {
+        mapBoxmap.addSource("servicearea", {
           type: "geojson",
           data: {
             type: "FeatureCollection",
@@ -53,7 +53,7 @@ const marker5 = new mapboxgl.Marker()
           }
         });
 
-        map.addLayer({
+        mapBoxmap.addLayer({
           id: "servicearea-fill",
           type: "fill",
           source: "servicearea",
@@ -78,7 +78,7 @@ const marker5 = new mapboxgl.Marker()
 
       function addStartingPointLayer() {
 
-        map.addSource("start", {
+        mapBoxmap.addSource("start", {
           type: "geojson",
           data: {
             type: "FeatureCollection",
@@ -86,7 +86,7 @@ const marker5 = new mapboxgl.Marker()
           }
 
         });
-        map.addLayer({
+        mapBoxmap.addLayer({
           id: "start-circle",
           type: "circle",
           source: "start",
@@ -101,19 +101,19 @@ const marker5 = new mapboxgl.Marker()
 
       }
 
-      map.on("load", () => {
+      mapBoxmap.on("load", () => {
         addServiceAreaLayer();
         addStartingPointLayer();
       });
 
-      map.on("click", (e) => {
+      mapBoxmap.on("click", (e) => {
 
         const coordinates = e.lngLat.toArray();
         const point = {
           type: "Point",
           coordinates
         };
-        map.getSource("start").setData(point);
+        mapBoxmap.getSource("start").setData(point);
 
         const authentication = new arcgisRest.ApiKey({
           key: apiKey
@@ -127,7 +127,7 @@ const marker5 = new mapboxgl.Marker()
 
           .then((response) => {
 
-            map.getSource("servicearea").setData(response.saPolygons.geoJson);
+            mapBoxmap.getSource("servicearea").setData(response.saPolygons.geoJson);
 
           });
 
