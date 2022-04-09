@@ -167,10 +167,6 @@
  
   });
 		
-		var london = new maplibregl.Marker()
-		.setLngLat([0.11, 51.49])
-		.addTo(map);
-		
 		
 		
 // alles voor de volgende kaart
