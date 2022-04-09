@@ -12,7 +12,7 @@
 	
 	<style>
 	body{
-	background-color: #323d4d;
+	background-color: #CDDDE0;
 	color: #fff;
 	
 }
@@ -80,7 +80,7 @@ const svg = d3.select('svg'),
 const radius = 200;
 const g = svg.append('g').attr('transform', `translate(${width/2}, ${height/2})`);
 
-const color = d3.scaleOrdinal(['#042940', '#005C53', '#9FC131', '#DBF227', '#D6D58E', '#506266','#3CA6A6','#fff']);
+const color = d3.scaleOrdinal(['#74B2BB', '#80C4CF', '#88D0DB', '#95E4F0', '#9BEDFA', '#C7F8FF','#BFEEF5','#FFFFFF']);
 
 const pie = d3.pie().sort(null).value(d => d.value);
 
