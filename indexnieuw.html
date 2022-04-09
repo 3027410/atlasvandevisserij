@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+
+					<title>Atlas van de Vissrij - Kaarten voor de Bühne</title>
+					<link rel="icon" href="images/simple-ATLAStfavicon.png" type="image/x-icon" >
+					<link href="css/style.css" rel="stylesheet" type="text/css">
+					<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet"> 
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+					
+					
+					<!-- Leafletkaart -->
+					<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+					integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+					crossorigin=""/>
+					<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+					integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+					crossorigin=""></script>
+					
+					
+					<!-- Maptilerkaart -->
+					<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+					<script src="https://cdn.maptiler.com/maplibre-gl-js/v2.1.1/maplibre-gl.js"></script>
+					<link href="https://cdn.maptiler.com/maplibre-gl-js/v2.1.1/maplibre-gl.css" rel="stylesheet" />
+					
+					
+					<!-- openLayerskaart -->
+					<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/css/ol.css" type="text/css">
+					<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/build/ol.js"></script>
+					<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/build/ol.js"></script>
+					 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ol3/3.8.2/ol.min.css" type="text/css">
+					
+					
+					
+					<!-- Mapbox GL JS -->
+					<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+					<link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+					<script src="https://unpkg.com/@esri/arcgis-rest-request@3.0.0/dist/umd/request.umd.js"></script>
+					<script src="https://unpkg.com/@esri/arcgis-rest-routing@3.0.0/dist/umd/routing.umd.js"></script>
+					<script src="https://unpkg.com/@esri/arcgis-rest-auth@3.0.0/dist/umd/auth.umd.js"></script>
+									
+					
+
+	</head>
+	<body>
+	
+		<div class="buitenbalk">
+		<header> <a href="#">
+				<img height="75px" src="images/simple-ATLAStlogowit.png">
+				</a>
+				<nav>
+					<ul>
+						<li><h6><a href="#">Home</a></h6></li>
+						<li><h6><a class="actieflink" href="#Vancouver">Actuele kaarten<i class="fas fa-chevron-right"></i></a></h6></li>
+						<li><h6><a href="#nl">NL</a></h6></li>
+						<li><h6><a href="#eu">EU</a></h6></li>
+						<li><h6><a href="#na">NA</a></h6></li>
+						<li><h6><a href="">ZA</a></h6></li>
+						<li><h6><a href="">AF</a></h6></li>
+						<li><h6><a href="">AZ</a></h6></li>
+						<li><h6><a href="">OC</a></h6></li>
+						<li><h6><a class="navigatielink" href="#">Contact</a></h6></li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+
+
+
+
+		<!-- Mobiel menu -->
+		<div class="topnav">
+
+			<a class="mobiellink" href="index.html"><img class="logomobiel" height="50px" src="images/simple-ATLAStlogowit.png"></a>
+				<a class="naastelkaar" href="https://twitter.com/waterschappen" target="_blank"><img height="16px" src="images/twitter-logo.png"></a>
+					<a class="naastelkaar" href="https://www.youtube.com/user/uvwvideokanaal" target="_blank"><img height="18px" src="images/yt_logo.png"></a>
+
+					<div id="myLinks">
+						<a href="urban-deltas.html">De delta's</a>
+						<a href="over-project-wereldwateren.html">Over dit project</a>
+						<a href="help-mee.html">Help mee!</a>
+
+
+
+					</div>
+					<a href="javascript:void(0);" class="icon" onclick="menuBar()">
+						<i class="fa fa-bars"></i>
+					</a>
+
+		</div>
+		
+<<<<<<< HEAD
+		    <div id="openLayersmap" class="openLayersmap"></div>
+    <div class="blok-ad" style="
+  background-image: url(images/paul-einerhand-eysa6RORvl0-unsplash.jpg);
+=======
+		
+    <div class="blok-ad" style="
+  background-image: url(images/vissen.jpg);
+>>>>>>> b7e6e772688f0c5f5323f0f9c4c9bba2c1bc778c
+  background-size: cover;
+background-repeat: no-repeat;
+background-position-y: center;
+background-attachment:fixed;">
+<<<<<<< HEAD
+
+
+  
+  
+=======
+  <div class="witvlak witvlak-vol">
+  <div class="paraplu">
+
+
+
+  <div class="tekstinvlak-links-vol-ZH"> 
+  
+  
+  
+<h5 style="color:#fff">De simpele Atlas</h5>
+<p style="color:#fff!important;font-weight: 600;">
+
+Snap jij er ook nooit wat van? Van die ingewikkelde kaarten waar veel te veel op te zien is. Precies. Daarom is er nu de simpele atlas.
+Het is heel simpel. U scrolt naar onder, wij laten kaarten zien. Kaarten met data die voor u belangrijk zijn.
+Simpel toch?
+</p>
+
+
+</div>
+</div>
+</div>
+  
+  
+  <div class="beeldruimte beeldruimte-vol">
+ 
+
+
+
+	
+  </div>  
+>>>>>>> b7e6e772688f0c5f5323f0f9c4c9bba2c1bc778c
+  </div>
+  
+  
+  <div class="blok-ad" style="
+<<<<<<< HEAD
+  background-image: url(images/paul-einerhand-eysa6RORvl0-unsplash.jpg);
+=======
+  background-image: url(images/vissen.jpg);
+>>>>>>> b7e6e772688f0c5f5323f0f9c4c9bba2c1bc778c
+background-size: cover;
+background-repeat: no-repeat;
+background-position-x: center;
+background-position-y: center;
+background-attachment: fixed;
+display: grid;
+  ">
+<<<<<<< HEAD
+  
+  
+
+=======
+>>>>>>> b7e6e772688f0c5f5323f0f9c4c9bba2c1bc778c
+  <div class="introblauw">
+  <div class="paraplu">
+  <div class="tekstrechts" style="width: auto !important;  max-width:520px !important;"> 
+  
+<<<<<<< HEAD
+    <h1>Vangst van de week</h1>
+=======
+    <h1>Collectie van de week</h1>
+>>>>>>> b7e6e772688f0c5f5323f0f9c4c9bba2c1bc778c
+  <h2>Uitgelicht:</h2>
+<div style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>De Pacifische Zalm</th>
+    </tr>
+    <tr>
+      <td>Zalmpassage in het deltagebied van de Fraser rivier nabij Vancouver te Canada. Hoe regelmatig keert de zalm nog terug, en hoe is de monitoring hierop?</td>
+    </tr>
+	
+<<<<<<< HEAD
+	<tr>
+      <th>Visserij in Europa</th>
+    </tr>
+    <tr>
+      <td>Eurostat data over de aanvoer van diverse Europese landen. Welk land vangt de meeste vis?</td>
+    </tr>
+	
+	
+=======
+>>>>>>> b7e6e772688f0c5f5323f0f9c4c9bba2c1bc778c
+    <tr>
+      <th>Vispassages in Nederland</th>
+    </tr>
+    <tr>
+      <td>Kaart en data over vispassages in de regio van Waterschap Drents Overijsselse Delta. Kunstmatige passages voor echte natuurkwaliteit.</td>
+    </tr>
+	
+	    <tr>
+<<<<<<< HEAD
+      <th>Hoe vers is mijn vis?</th>
+    </tr>
+    <tr>
+      <td>Waar komt jouw vis vanuit zee binnen 15 minuten rijden? Vind hier het antwoord!</td>
+=======
+      <th>Visserij in Europa</th>
+    </tr>
+    <tr>
+      <td>Eurostat data over de aanvoer van diverse Europese landen. Welk land vangt de meeste vis?</td>
+>>>>>>> b7e6e772688f0c5f5323f0f9c4c9bba2c1bc778c
+    </tr>
+	
+	
+  </table>
+<<<<<<< HEAD
+=======
+  <h6>
+  Zie de <a href="deltas-vergelijken.html" target="_blank" style="text-decoration: none;text-transform: none;" class="kleurverandering">vergelijkingspagina</a> voor meer gegevens.
+  </h6>
+</div>
+
+
+<h5 class="kennis-tel">Kennismaking</h5>
+<p>
+
+
+De Fraser River Delta is een deltagebied rond de mond van de Fraser rivier. Deze rivier, vernoemd naar Simon Fraser, wie in 1808 een expeditie leidde onder de vlag de North West Company van de stad Prince George, hoog in de Rocky Mountains naar de mond van de rivier, staat bekend om zijn sterke stromingen, zijn hoge sedimentgehalte. 
+<br>
+<br>
+Hoog in de Rocky Mountains ontspringt de rivier en legt hij een lengte af van 1375 km, voordat hij uitmondt te midden van de agglomeratie Vancouver.
+
+</p>
+>>>>>>> b7e6e772688f0c5f5323f0f9c4c9bba2c1bc778c
+
+
+</div>
+</div>
+
+  
+  </div>
+  
+  
+  <div class="beeldruimte-intro">
+  
+
+
+  </div>
+  </div>
+		
+		
+		
+		
+<<<<<<< HEAD
+  <div class="binnencontainer">	
+=======
+		
+>>>>>>> b7e6e772688f0c5f5323f0f9c4c9bba2c1bc778c
+		
+		
+		
+		
+<div class="grid-container">
+  <div class="grid-item">
+    
+  		<!-- Toch besloten de leaflet met Geojson data een iframe te laten, omdat var map wijziging niet werkt, op zijn best krijg ik de basislaag, zonder de data. De andere kaarten zijn wel gelukt-->
+			<iframe id="FRD-leafet" name="FRD-leafet" title="FRD-leafet" class="responsive-iframe" src="graphdata/FRD-leaflet/leaflet_Fraser.html" style="width: 0; min-width: 100% !important; border: none; min-height:100%;" height="1000px"></iframe>
+  </div>
+<<<<<<< HEAD
+  <div id="na" class="grid-item">
+=======
+  <div class="grid-item">
+>>>>>>> b7e6e772688f0c5f5323f0f9c4c9bba2c1bc778c
+  <div class="text-in-grid">
+<h5>De Pacifische Zalm</h5>
+<p>
+
+
+De Fraser River Delta is naast zijn economische aspecten ook voor de migratie van de befaamde Sockeye en de Chinook Zalm erg van belang. Jaarlijks zwemmen deze zalmen de rivier op om zich in zijn natuurlijk habitat voort te planten.
+<br>
+<br>
+Na jaren van bebouwen en transport over het water is de migratie van deze vis echter behoorlijk gestokt. 
+</p>
+
+
+<br>
+<hr>
+<p>
+
+Niet alleen bovengronds belemmert men de zalm. Ook ondergronds door de winning van grind uit de rivier. De paaigronden en kweekgronden worden in de stedelijke en in de landbouwomgeving enorm beschadigd.
+<br>
+<br>
+ Er zijn al vele onderzoeken hier naar gedaan, maar 2020 kan wel het slechtste jaar ooit voor de Sockeye zalmmigratie worden. Dat het stokt is wellicht nog een eufemisme als je leest in <a href="https://thenarwhal.ca/low-fraser-river-sockeye-salmon-bc/" target="_blank">The Narwhal</a> dat er dit jaar ten aanzien van het gemiddelde van 9,6 miljoen zalmen tussen 1980 en 2014 dit jaar er maar 941.000 zijn teruggekeerd.
+<br>
+<br>
+ Hoewel dit artikel de overbevissing als oorzaak aanwijst, ziet men ook een causaal verband tussen het storten van medicijnresten en pesticiden in habitatten van wilde vis door de vele viskwekerijen in dit gebied.
+
+</p>
+
+
+
+
+</div>
+  </div>
+  
+   <div class="grid-item">
+     <div class="text-in-grid">
+   <p>
+De kaart hierboven toont het deltagebied (lichtblauw), en waar vissen en vogels die migreren voedsel vandaan halen (oranje). Met name het laaggelegen wadlandschap, vlak voor de kust, is een welbezochte plek. Ten noordwesten van Vancouver, in de Straat van Georgia, bevinden zich de viskwekerijen.
+<br>
+<br>
+De vier visjes vertegenwoordigen meetpunten van waar deze zomer de zalmen terug de rivier in migreerde. Ook is op deze kaart een overzicht van de turfgronden te zien (blauw); een kenmerk met Nederlandse gelijkenissen. Wat opvalt als je ze naast een luchtfoto legt is dat deze gebieden licht of niet bebouwd, of een park zijn. 
+<br>
+</p>
+<br>
+<hr style="border: 1px solid rgba(0, 0, 0, 0.2) !important;">
+<br>
+<p>
+Op de grafiek zijn de totaal aantal vispassages afgebeeld in de periode juni-september 2020. In deze periode waren dat ‘slechts’ 284.318 zalmen, wat aantoont dat de voorspelde 941.000 volgens de data van de Pacific Salmon Commission naar alle waarschijnlijkheid niet is gehaald.
+<br>
+Sterker nog, de trendlijn zet zoals te zien sinds augustus al een stevige daling in.
+<br>
+<br>
+Om deze nijpende conclusie is medio december 2020 besloten om<a href=" https://thetyee.ca/Analysis/2020/12/17/This-Year-Fate-BC-Wild-Salmon/" target="_blank"> viskwekerijen rondom de Discovery eilanden te sluiten</a>, waar in de regio 20 kwekerijen zijn gevestigd.
+
+
+
+
+</p>
+   
+   
+   
+   </div>
+   </div>
+  <div class="grid-item">
+  	<iframe id="zalmpassages" name="Totaal aantal zalmpassages zomer 2020" title="Totaal aantal zalmpassages zomer 2020" aria-label="chart" id="datawrapper-chart-p5taq" src="https://datawrapper.dwcdn.net/p5taq/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none; min-height:100%;" height="100%"></iframe>
+			<script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+			</script>
+  
+  </div>  
+
+  <div class="grid-item">
+  	<div id="mapTilerMap"></div>
+  </div>
+  <div  id="eu" class="grid-item">
+      <div class="text-in-grid"> 
+  
+  <h5>Visserij in Europa</h5>
+    <div id="state-legend" class="legendaMaptiler"> 
+	  <h4>Aanvoer van geselecteerde landen</br>
+	  van vis (x 1000 ton) - 2019</h4>
+
+		<div><span style="background-color: #1996E0"></span>0 - 500</div>
+		<div><span style="background-color: #1479B5"></span>500 - 1.000</div>
+		<div><span style="background-color: #0E5580"></span>1.000 - 1.500</div>
+		<div><span style="background-color: #08334D"></span>1.500 - 2.000</div>
+		</br>
+		  Bron: <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=fish_ld_main&lang=en">Eurostat</a>
+	</div>
+<<<<<<< HEAD
+     <div class="text-in-grid">
+	<p>
+	
+	
+In Europa wordt heel wat afgevist. Eens in de zoveel jaar (vast patroon is niet te herkennen) wordt door Eurostat, de Europese databank, bijgehouden hoeveel ton vis per jaar wordt binnengehengeld, en door welke landen. De data van de volgende landen, zie ook bron in de legenda, zijn in de kaart hiernaast gevisualiseerd. 
+<br>
+<br>
+Deze landen halen in totaal elk jaar zo’n 926.800.000 kilo aan vis binnen. Maar wat blijkt: dit zijn niet eens per definitie de landen met de grootste visvloten van Europa. Die landen zijn hieronder in de grafiek weergegeven. De grootste hengelaar; Noorwegen, hoort niet bij de grootste 7 landen met een visvloot van Europa in het jaar 2019. Een opvallende constatering. De grootste visvloten zijn:
+=======
+	
+	
+	
+	<iframe id="fleetcapacity" name="EU fishing fleet capacity, 2019" title="EU fishing fleet capacity, 2019" aria-label="chart" src="graphdata/datavisD3/index.html" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none; min-height:100px;" height="560px"></iframe>
+   <script src="graphdata/datavisD3/vistaartdiagram.js" type="text/javascript">
+</script>
+	   <svg class="visdiagram" width="400" height="400"></svg>
+	   
+	
+	
+	
+	
+  </div>  
+  <div class="grid-item">7</div>
+  <div class="grid-item">
+    <div id="openLayersmap" class="openLayersmap"></div>
+>>>>>>> b7e6e772688f0c5f5323f0f9c4c9bba2c1bc778c
+
+	
+	</p>
+	
+	  </div>
+	  </div>
+	<iframe id="fleetcapacity" name="EU fishing fleet capacity, 2019" title="EU fishing fleet capacity, 2019" aria-label="chart" src="graphdata/datavisD3/index.html" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none; min-height:100px;" height="560px"></iframe>
+   <script src="graphdata/datavisD3/vistaartdiagram.js" type="text/javascript">
+</script>
+	   <svg class="visdiagram" width="400" height="400"></svg>
+	   
+	
+	
+	
+	
+  </div>  
+  <div id="nl" class="grid-item">
+  
+         <div class="text-in-grid"> 
+		 
+		 
+	  <h5>Vispassages in Nederland</h5>
+	  
+	  
+	  	<p>
+	
+	
+Vele Nederlandse waterschappen, met in het bijzonder die in het rivierengebied, houden jaarlijks bij door minotoring van hun kunstwerken hoeveel vis er passeert door de sluizen. Met sensoren wordt deze data ingeladen, en online gepubliceerd. Deze publicatie is interactief.
+<br>
+<br>
+Waterschap Drents Overijssel Delta heeft deze data ondergebracht bij Data Overheid, en beschrijft de data als volgt: 'Een kunstmatige passage ten behoeve van de vistrek bij kunstwerken in wateren.'
+
+	</p>
+		 
+	  </div>	 
+		 </div>
+  
+
+  <div class="grid-item">
+
+  		<!-- Toch besloten de leaflet met Geojson data een iframe te laten, omdat var map wijziging niet werkt, op zijn best krijg ik de basislaag, zonder de data. De andere kaarten zijn wel gelukt-->
+			<iframe id="FRD-leafet" name="FRD-leafet" title="FRD-leafet" class="responsive-iframe" src="graphdata/ArcGIS-javaMap/index.html" style="width: 0; min-width: 100% !important; border: none; min-height:100%;" height="1000px"></iframe>
+
+   </div>
+  
+  <div class="grid-item">
+  <div id="MAPBOX"></div>
+   </div>
+  
+    <div class="grid-item">
+           <div class="text-in-grid"> 
+		 
+		 
+	  <h5>Hoe vers is mijn vis?</h5>
+	  
+	  
+	  	<p>
+	
+	
+U ziet hiernaast een kaart van Nederland, met een aantal van de meest bekende vissersdorpen van Nederland. Zoom in op uw dichtsbijzijnde visafslag, en meet vanaf daar tot een kwartier rijden hoe vers uw vis nog is, om te weten waar uw vis binnen een kwartier kan komen! Elke plek is klikbaar. 
+
+	</p>
+		 
+	  </div>
+     </div>
+</div>
+		
+		
+
+
+</div>
+
+
+
+
+<style>
+      @import url(../templates/bucket.css);
+    </style>
+    <div id="cesiumContainer" class="fullSize"></div>
+    <div id="loadingOverlay"><h1>Loading...</h1></div>
+    <div id="toolbar"></div>
+
+				
+
+
+
+
+		<!-- Jaartal notatie -->
+		<div class="copyright">&copy;
+			<script type="text/javascript">
+				var today = new Date()
+				var year = today.getFullYear()
+				document.write(year)
+			</script>
+			Deze website is mogelijk gemaakt door de Unie van Waterschappen, i.s.m. Rijkswaterstaat | Gebouwd en ontworpen door Gablo
+		</div>
+		
+		
+		
+		<script type="text/javascript" src="js/openLayers.js"></script>
+		<script type="text/javascript" src="js/maptilerMap.js"></script>
+		<script type="text/javascript" src="js/mapboxMap.js"></script>
+
+			<!-- data -->
+	<script src="turf.js"></script>
+	<script src="vvm.js"></script>
+	<script src="mvg.js"></script>
+	<script src="delta.js"></script>
+	</body>
+</html>
