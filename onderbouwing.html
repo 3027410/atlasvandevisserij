@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+
+					<title>Atlas van de Vissrij - Kaarten voor de Bühne</title>
+					<link rel="icon" href="images/simple-ATLAStfavicon.png" type="image/x-icon" >
+					<link href="css/style.css" rel="stylesheet" type="text/css">
+					<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet"> 
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+					
+					
+					<!-- Leafletkaart -->
+					<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+					integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+					crossorigin=""/>
+					<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+					integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+					crossorigin=""></script>
+					
+					
+					<!-- Maptilerkaart -->
+					<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+					<script src="https://cdn.maptiler.com/maplibre-gl-js/v2.1.1/maplibre-gl.js"></script>
+					<link href="https://cdn.maptiler.com/maplibre-gl-js/v2.1.1/maplibre-gl.css" rel="stylesheet" />
+					
+					
+					<!-- openLayerskaart -->
+					<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/css/ol.css" type="text/css">
+					<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/build/ol.js"></script>
+					<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/build/ol.js"></script>
+					 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ol3/3.8.2/ol.min.css" type="text/css">
+					
+					
+					
+					<!-- Mapbox GL JS -->
+					<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+					<link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+					<script src="https://unpkg.com/@esri/arcgis-rest-request@3.0.0/dist/umd/request.umd.js"></script>
+					<script src="https://unpkg.com/@esri/arcgis-rest-routing@3.0.0/dist/umd/routing.umd.js"></script>
+					<script src="https://unpkg.com/@esri/arcgis-rest-auth@3.0.0/dist/umd/auth.umd.js"></script>
+									
+					
+
+	</head>
+	<body>
+	
+		<div class="buitenbalk">
+		<header> <a href="index.html">
+				<img height="75px" src="images/simple-ATLAStlogowit.png">
+				</a>
+				<nav>
+					<ul>
+						<li><h6><a href="index.html">Home</a></h6></li>
+						<li><h6><a class="actieflink" href="#Vancouver">Actuele kaarten<i class="fas fa-chevron-right"></i></a></h6></li>
+						<li><h6><a href="#nl">NL</a></h6></li>
+						<li><h6><a href="#eu">EU</a></h6></li>
+						<li><h6><a href="#na">NA</a></h6></li>
+						<li><h6><a href="">ZA</a></h6></li>
+						<li><h6><a href="">AF</a></h6></li>
+						<li><h6><a href="">AZ</a></h6></li>
+						<li><h6><a href="">OC</a></h6></li>
+						<li><h6><a class="navigatielink" href="onderbouwing.html">Info</a></h6></li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+
+
+
+
+		<!-- Mobiel menu -->
+		<div class="topnav">
+
+			<a class="mobiellink" href="index.html"><img class="logomobiel" height="50px" src="images/simple-ATLAStlogowit.png"></a>
+				<a class="naastelkaar" href="https://twitter.com/waterschappen" target="_blank"><img height="16px" src="images/twitter-logo.png"></a>
+					<a class="naastelkaar" href="https://www.youtube.com/user/uvwvideokanaal" target="_blank"><img height="18px" src="images/yt_logo.png"></a>
+
+					<div id="myLinks">
+						<a href="urban-deltas.html">De delta's</a>
+						<a href="over-project-wereldwateren.html">Over dit project</a>
+						<a href="help-mee.html">Help mee!</a>
+
+
+
+					</div>
+					<a href="javascript:void(0);" class="icon" onclick="menuBar()">
+						<i class="fa fa-bars"></i>
+					</a>
+
+		</div>
+	
+  
+  
+		
+		
+		
+		
+  <div class="binnencontainer">	
+   
+   
+   <div style="padding: 150px;">
+   
+<p>Beste Niene,
+<br>
+<br>
+Graag onderbouw ik nog mijn keuzes voor de website, en reflecteer ik op het werk van de afgelopen periode aan dit project, met in het bijzonder het uitzoeken van de werking van javascript en de kaarten. Maar natuurlijk ook de onderbouwing van het geheel.
+<br>
+<br>
+Het onderwerp is vis. Alles omtrent vis. Weinig kaarten gaan over onderwerpen die maar een niche zijn in de vraag, en dus weinig mensen trekken. Professionals zullen veelal gebruik maken van deze kaarten. De doelgroep is dus de visser, de baggeraar, de onderzoeker met een vraag naar uitwerking van vergaarde data op specifieke locaties. Etc. De datavisualisaties zijn breed begrepen grafische weergaven: een taartdiagram met betrekking op het onderwerp in het blok. En een lijndiagram met stippen in de as.
+<br>
+<br>
+De eerste kaart bovenaan, waarvan het de bedoeling was dat dit een navigatiebalk werd met ankerpunten naar de pagina-onderdelen (een menu-balk) – wat overigens niet gelukt is helaas, is gemaakt met Openlayers. Deze library is simpel in opzet, oogt simpel, maar kreeg ik vervolgens niet werkend. Enkel de basislaag kreeg ik veranderd in een watercolor-map. Voor de rest een standaard kaart. De opmaak is zoals beoogt gescheiden op code; HTML, CSS, en Javascript zijn alle drie op de daarvoor bestemde plek te vinden. De map graphdata bestond overigens gedurende de ontwikkelingen uit demo-data en oefenmateriaal uit de lessen, workshops, en het internet. 
+<br>
+<br>
+De tweede kaart die je treft is een Leaflet-kaart. Ontwikkeld voor een eerder doel: HWUD, maar nog goed bruikbaar, en aanleiding voor de gekozen thematiek. Deze kaart is voorzien van geojson, opgeslagen als javascript met een aanhaling voor HTM, helaas ben ik er niet in geslaagd na vele pogingen deze kaart te scheiden zoals bedoeld. Het is een Iframe gebleven om die rede. Gebrek javascriptkennis geef ik hiervoor op als rede. We hoeven aan elkaar niet te onderbouwen waar die achterstand is ontstaan lijkt mij.
+<br>
+<br>
+Hierna treft u, wanneer u verder scrolt, een Maptiler-kaart. Een kaart waarbij het gelukt is zowel geodata toe te voegen, én om er een gescheiden document van de te maken, met juiste variabelen. De webkaart is voorzien van een legenda; welke alleen werkte als overlay wanneer deze gescheiden was, wederom op een eigen pagina. Om deze toch goed te tonen heb ik deze separaat meegenomen op het andere veld rechts. De legenda is overigens nog wel in de opmaak behorende bij de kaart, en de kleuren in de datapolygonen.
+<br>
+<br>
+Een hierna volgende is een ArcGIS-javascript kaart, van een Esri webmap, vertaalt voor het web naar code. Ook deze is het gelukt te scheiden, alleen niet om de zijbalk te verbredem: deze zijbalk is voor alle duidelijk interactief: wanneer je op de data klikt op de kaart verschijnt de attribuutinformatie in deze kolom.
+<br>
+<br>
+Mapbox GL JS sluit de pagina af. Deze kaart, heb ik gemaakt met behulp van een Esri-tutorial, op basis van tokens. De punten zijn handmatig toegevoegd en de hoofdfunctie is werkend. Voor veel kaarten is overigens wel een internetverbinding vereist, door de externe libraries en scripts. Een toegevoegde waarde van een webmap, separaat van de software waarmee deze is gemaakt, waarvoor je je door de vele onnodige bochten wringt waarbij het resultaat meestal minder waardevol is dan wanneer je gebruik maakt van de geleerde software, lijkt mij dat je deze kaarten maakt om ook offline te gebruiken.
+
+</p>
+
+
+		
+		
+
+
+</div>
+</div>
+
+
+
+	
+
+
+		<!-- Jaartal notatie -->
+		<div class="copyright">&copy;
+			<script type="text/javascript">
+				var today = new Date()
+				var year = today.getFullYear()
+				document.write(year)
+			</script>
+			Deze website is mogelijk gemaakt door de Unie van Waterschappen, i.s.m. Rijkswaterstaat | Gebouwd en ontworpen door Gablo
+		</div>
+		
+		
+		
+		<script type="text/javascript" src="js/openLayers.js"></script>
+		<script type="text/javascript" src="js/maptilerMap.js"></script>
+		<script type="text/javascript" src="js/mapboxMap.js"></script>
+
+			<!-- data -->
+	<script src="turf.js"></script>
+	<script src="vvm.js"></script>
+	<script src="mvg.js"></script>
+	<script src="delta.js"></script>
+	</body>
+</html>
